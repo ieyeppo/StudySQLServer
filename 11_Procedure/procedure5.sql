@@ -1,7 +1,7 @@
 use sqlDB;
 go
 
-
+-- Ãâ·Â ¾Æ¿ôÇ² ¿¹Á¦
 create or alter procedure plusNew
 	@p1 int,
 	@p2 int,
