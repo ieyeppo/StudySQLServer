@@ -127,4 +127,18 @@ group by d.Names
 with rollup;
 
 
+-- 5번문제 null부분 '합계' 넣기 
+select 
+	case 
+	when d.Names is null then '총합계금액'
+	else d.Names
+	end as 'names' 
+	, format(SUM(b.Price), '#,#원') as '합계금액'
+
+from bookstbl as b
+inner join divtbl as d
+on b.Division = d.Division
+group by rollup(d.Names);
+
+
 -- 17_Test\20210218_최현화_시험쿼리.sql
